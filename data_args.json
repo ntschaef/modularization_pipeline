@@ -1,0 +1,138 @@
+{
+  "Parser": {
+    "  DESCRIPTION db_list": "the list of all the datasets that will be joined to train the model. Current options for each date are 20220715: KY,LA,NJ,NM,SE,UT with schema info_extraction, 20230713: KY,LA,SE,UT with schema info_extraction, 20230811: IMS with schema info_extraction, 20221027: LA,NJ,SE,UT with schema recurrence, 20230602: LA,NJ,SE,UT with schema recurrence, 20230123: CA with schema reportability, 20230322: SE with schema reportability. Anything with the \"man_coded\" schema is a report specific classifer (eg bucketing or reportability), the \"info_extraction\" schema is case level predictions, reportability is specific to reportability, and recurrence is specific to recurrence",
+    "db_list": {
+      "20220715": [
+        "SE"
+      ]
+    },
+    "  DESCRIPTION add_fields": "dictionary of additional fields to add to the schema. The key of the dictionary is the table and the value is the field list that is desired - eg. {\"man_coded\": [\"at_risk_any_flag\"]}.",
+    "add_fields": {"ctc":["cast(age_at_diagnosis as int) as ageAtDx"]}
+  },
+  "Cleaner": {
+    "  DESCRIPTION convert_breaktoken": "Will \"\\n\", \"\\r\", and \"\\t\" be converted to \"breaktoken\"?",
+    "convert_breaktoken": true,
+    "  DESCRIPTION convert_escapecode": "Will the \"\\x??\" tokens be convert to \"\\n\" or \" \" (instead of being left alone)",
+    "convert_escapecode": true,
+    "  DESCRIPTION convert_general": "convert numbers with decimals to \"floattoken\" and large number (>=100) to \"largeinttoken\" and normalize punctuation",
+    "convert_general": true,
+    "  DESCRIPTION remove_whitespace": "Will groups of spaces be combined into one space?",
+    "remove_whitespace": true,
+    "  DESCRIPTION remove_longword": "Will words over 25 characters in length be removed?",
+    "remove_longword": true,
+    "  DESCRIPTION remove_breaktoken": "Indicates which punctuation will be removed: none, dups, or all.",
+    "remove_breaktoken": "dups",
+    "  DESCRIPTION remove_punc": "Indicates which punctuation will be removed: none, dups, most, or all",
+    "remove_punc": "most",
+    "  DESCRIPTION lowercase": "Will all alpha characters be converted to lowercase?",
+    "lowercase": true,
+    "  DESCRIPTION stem": "Will the terms be categorized into their \"root\" category (aka use stemmer package)",
+    "stem": false,
+    "  DESCRIPTION fix_clocks": "Will the \"time\" terminology be regularized?",
+    "fix_clocks": false
+  },
+  "Sanitizer": {
+    "  DESCRIPTION remove_dups": "should duplicate unique record identifiers be removed? \"False\" will stop the run if duplicate ids are found",
+    "remove_dups": false,
+    "  DESCRIPTION min_doc_length": "indicates the smallest amount of characters that will be allowed after whitespece is removed.",
+    "min_doc_length": 20,
+    "  DESCRIPTION deidentify": "set to true to deidentify tokens for summit export.  Otherwise set to false.",
+    "deidentify": false
+  },
+  "Filter": {
+    "  DESCRIPTION tasks": "The list of tasks for which to generate labels. If desired, multiple tasks can be combined into a single task using the syntax \"task1+task2\".  For example, if task1 has labels (1,2) and task2 has labels (a,b), \"task1+task2\" will result in the label set (1a,1b,2a,2b).\n\"behavior\",\"grade\",\"histology\",\"laterality\",\"site\",\"subsite\",\"biomarkers_er\",\"biomarkers_pr\",\"biomarkers_her2\",\"biomarkers_kras\",\"biomarkers_msi\",\"recode\",\"ICCC\": availible for all schemas.\n\"reportability\",\"report_category\": availible for ONLY the man_coded schema.\n\"recurrence\": availible in the recurrence schema.",
+    "tasks": [
+      "behavior",
+      "histology",
+      "laterality",
+      "site",
+      "subsite"
+    ],
+    "  DESCRIPTION only_single": "Each case or patient can be associated with multiple path reports. If set to \"case\" or \"patient\", the resulting dataset will only include path reports from cases/patients associated with a single report. Set to \"None\" will include reports from all cases/patients.",
+    "only_single": "none",
+    "  DESCRIPTION include_only_scores": "restrict to specific scores in each field. Example usage: {\"csMetsAtDx\":[\"<1\",\"2\",\"3\",\">=5\"]} will only filter out \"1\" and \"4\" from being used in the metastatic field. If there is a numeric values a range filtered can be used by declaring \">\", \"<\", \">=\", or \"<=\" BEFORE the number. Default: empty dictionary includes all values.",
+    "include_only_scores": {"ageAtDx":["<25"]},
+    "  DESCRIPTION window_days": "Only keep reports where at least one of the specified window_fields is within X days of \"pathDateSpecCollect1\". Examples: \"[10]\" will keep reports within 10 days before or after SpecCollect, \"[-5,10]\" will keep reports within 5 days before or 10 days after SpecCollect, and \"[0]\" will ignore this filter and keep all reports",
+    "window_days": [
+      0
+    ],
+    "  DESCRIPTION window_fields": "The date fields used with the \"window_days\" filter.  Default is ['dateOfDiagnosis', 'rxDateMostDefinSurg', 'rxDateSurgery']",
+    "window_fields": [
+      "dateOfDiagnosis",
+      "rxDateMostDefinSurg",
+      "rxDateSurgery"
+    ],
+    "  DESCRIPTION min_year": "The minimum year that is allowed for the reports.",
+    "min_year": 2004,
+    "  DESCRIPTION max_year": "The maximum year that is allowed for the reports. If \"0\" or greater than the present year, then the max year defaults to the date.",
+    "max_year": 0
+  },
+  "Splitter": {
+    "  DESCRIPTION split_type": "at which level are the reports split?  The current options are \"patient\" (which will look at the patient keys only), \"case\" (which will only look at the case keys) and \"record\" (which will treat every case as individual",
+    "split_type": "case",
+    "  DESCRIPTION by_registry": "Will the splits be created on the registry level (instead of creating all the data as one set)? Eg if reg1 has 200 records and reg2 has 100, should the split force 10% to be 20 from reg1 and 10 from reg2 (vs something like 23 from reg 1 and 7 from reg2)?",
+    "by_registry": true,
+    "  DESCRIPTION test_split": "identification of how the test split will be withheld. It will take the form (how, value). The \"how\" is currently restricted to \"percent\" (a flat percent with the value, v, such that 0 <= v < 1), \"recent\" (THE FIRST percent with the value, v, such that 0 <= v < 1 of reports when ordered by report date and index), \"year\" (where the focus year will be greater than the value), and \"cv\" (which will divide the dataset by K sets >2 and rotate through each set).",
+    "test_split": [
+      "percent",
+      0.15
+    ],
+    "  DESCRIPTION val_split": "identification of how the test split will be withheld. It will take the form (how, value). The \"how\" is currently restricted to \"percent\" (a flat percent with the value - which cannot be called with the \"test_split\": cv - , v, such that 0 < =v < 1) and \"cv\" (which will divide the dataset by K sets >2 and rotate through each set).",
+    "val_split": [
+      "percent",
+      0.15
+    ],
+    "  DESCRIPTION sklearn_random_seed": "The seed at which sklearn will genrate the splits.",
+    "sklearn_random_seed": 0
+  },
+  "Data_Generator": {
+    "  DESCRIPTION vocab_source": "indication of where the w2v data is coming from.  Options are None in which case the train split will be used to generate data and randomize the input layer, \"full\" indicating the cleaned (unfiltered) records, \"all\" indicating indicating that all splits will be used, \"test\" will utilize the train + test splits, \"val\" is the train + validation splits, and \"train\" will utilize only the train split.",
+    "vocab_source": "train",
+    "  DESCRIPTION concat_split": "This will combined the records together based on how they were split (split_type). //THIS IS BROKEN CURRENTLY",
+    "concat_split": false,
+    "  DESCRIPTION use_security": "indication that the vocabulary will be restricted to a publically availible set of words.",
+    "use_security": false,
+    "  DESCRIPTION use_w2v": "indication of whether to use the word2vec module (the alternative is randomizing the input layer).",
+    "use_w2v": true,
+    "  DESCRIPTION min_label_count": "the amount of occurances a label must must appear within the train split to be captured in the vocab list. 1 will capture all of them",
+    "min_label_count": 1,
+    "  DESCRIPTION w2v_kwargs": "various arguments for w2v. These can include \"size\", \"min_count\", \"window\", \"workers\", \"iter\", and anything else that may be needed. NOTE: \"size\" and \"min_count\" will be used regardless of if Word2Vec is used.",
+    "w2v_kwargs": {
+      "window": 5,
+      "workers": 5,
+      "iter": 5,
+      "min_count": 10,
+      "size": 300
+    },
+    "  DESCRIPTION np_seed": "sets the random seed for numpy. -1 will keep it random",
+    "np_seed": -1,
+    "  DESCRIPTION add_tasks": "list of additional tasks to include. Additional labels are expected if nonempty",
+    "add_tasks": [],
+    "  DESCRIPTION add_labels": "additional labels that will be added onto the generated tasks.",
+    "add_labels": {}
+  },
+  "Encoder": {
+    "  DESCRIPTION metadata_fields": "List of all the names of the metadata desired. These will be checked against the schema used. Data fields and baseline fields will be excluded. dates will only be availible in xxx_year and xxx_yyyy_diff format.",
+    "metadata_fields": [
+      "registryId",
+      "recordDocumentId",
+      "patientId",
+      "tumorId",
+      "pathDateSpecCollect1_year",
+      "rxDateMostDefinSurg_pathDateSpecCollect1_diff",
+      "rxDateSurgery_pathDateSpecCollect1_diff",
+      "dateOfDiagnosis_pathDateSpecCollect1_diff",
+      "ageAtDx"
+    ],
+    "  DESCRIPTION reverse_tokens": "This will reverse the documents to read the last tokens first.",
+    "reverse_tokens": false,
+    "  DESCRIPTION remove_unks": "This will remove the unknown tokens from the reports (as opposed to mapping it to an unk term).",
+    "remove_unks": false,
+    "  DESCRIPTION sequence_length": "Max token length that will be used for the records AFTER it has been ordered (or reversed).",
+    "sequence_length": 3000
+  },
+  "Pipeline": {
+    "cache_dir": "api_cache",
+    "data_output": "output"
+  }
+}

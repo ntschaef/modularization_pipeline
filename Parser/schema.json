@@ -1,0 +1,139 @@
+{
+  "info_extraction":{
+    "tables": [
+      "epath",
+      "ctc"
+    ],
+    "ctc": {
+      "date_fields": [
+        "date_of_diagnosis as dateOfDiagnosis",
+        "rx_date_most_defin_surg as rxDateMostDefinSurg",
+        "rx_date_surgery as rxDateSurgery",
+        "date_of_birth as dateOfBirth"
+      ],
+      "order_id_fields": [
+        "_meta_registry as registryId"
+      ],
+      "id_fields": [
+        "patient_id_number as patientId",
+        "tumor_record_number as tumorId"
+      ],
+      "baseline_fields": [
+        "behavior_code_icd_o_3 as behavior", 
+        "grade", 
+        "histologic_type_icd_o_3 as histology", 
+        "laterality", 
+        "substr(primary_site,1,3) as site", 
+        "primary_site as subsite",
+        "seer_summary_stage_2000 as stage",
+        "cs_site_specific_factor_1 as csSiteSpecificFactor1",
+        "cs_site_specific_factor_2 as csSiteSpecificFactor2",
+        "cs_site_specific_factor_15 as csSiteSpecificFactor15",
+        "cs_site_specific_factor_9 as csSiteSpecificFactor9",
+        "estrogen_receptor_summary as estrogenReceptorSummary",
+        "progesterone_recep_summary as progesteroneRecepSummary",
+        "her2_overall_summary as her2OverallSummary",
+        "microsatellite_instability as microsatelliteInstability",
+        "kras" 
+      ],
+      "other_fields": [
+        "cs_mets_at_dx as csMetsAtDx"
+      ]
+    },
+    "epath": {
+      "key_date": [
+        "path_date_spec_collect_1 as pathDateSpecCollect1"
+      ],
+      "date_fields": [
+        "path_date_spec_collect_1 as pathDateSpecCollect1"
+      ],
+      "order_id_fields": [
+        "_meta_filename as recordDocumentId"
+      ], 
+      "other_fields": [],
+      "id_fields": [
+        "patient_id_number as patientId",
+        "tumor_record_number as tumorId"
+      ]
+    }
+  },
+  "reportability": {
+    "tables": [
+      "epath",
+      "man_coded"
+    ],
+    "man_coded": {
+      "date_fields": [],
+      "order_id_fields": [
+        "_meta_registry as registryId"
+      ],
+      "id_fields": [
+        "record_document_id as recordDocumentId"
+      ],
+      "baseline_fields": [
+        "reportable as reportability"
+      ],
+      "other_fields": []
+    },
+    "epath": {
+      "key_date": [
+        "path_date_spec_collect_1"
+      ],
+      "date_fields": [
+        "path_date_spec_collect_1"
+      ],
+      "order_id_fields": [
+        "patient_id_number as patientId",
+        "tumor_record_number as tumorId",
+        "_meta_filename as filename"
+      ], 
+      "other_fields": [],
+      "id_fields": [
+        "record_document_id"
+      ]
+    }
+  },
+  "recurrence": {
+    "tables": [
+      "epath",
+      "man_coded"
+    ],
+    "man_coded": {
+      "date_fields": [],
+      "order_id_fields": [
+        "_meta_registry as registryId"
+      ],
+      "id_fields": [
+        "record_document_id as recordDocumentId"
+      ],
+      "baseline_fields": [
+        "path_recurrence as recurrence",
+        "substr(primary_site,1,3) as site",
+        "primary_site as subsite",
+        "histologic_type_icd_o_3 as histology",
+        "behavior_code_icd_o_3 as behavior",
+        "laterality"
+      ],
+      "other_fields": []
+    },
+    "epath": {
+      "key_date": [
+        "path_date_spec_collect_1"
+      ],
+      "date_fields": [
+        "path_date_spec_collect_1"
+      ],
+      "order_id_fields": [
+        "patient_id_number as patientId",
+        "tumor_record_number as tumorId",
+        "_meta_filename as filename"
+      ], 
+      "other_fields": [],
+      "id_fields": [
+        "record_document_id"
+      ]
+    }
+  }
+}
+
+

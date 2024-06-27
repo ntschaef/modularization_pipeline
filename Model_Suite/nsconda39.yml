@@ -1,0 +1,21 @@
+name: nsconda39
+channels:
+  - https://kdinxmgt01.ornlkdi.org/anaconda5
+  - https://kdinxmgt01.ornlkdi.org/anaconda
+  - https://kdinxmgt01.ornlkdi.org/anaconda-r
+dependencies:
+  - python=3.9.16
+  - pytorch=1.12.1=gpu_cuda113py39h19ae3d8_1
+  - pandas
+  - scikit-learn
+  - pyyaml
+  - gitpython
+  - sqlite
+  - nltk
+  - regex
+  - numpy
+  - gensim
+  - h5py
+  - pip
+  - flake8
+  - torchmetrics>=1.0

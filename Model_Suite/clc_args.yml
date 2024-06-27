@@ -1,0 +1,45 @@
+save_name: 'clc_model'  # foldX.h5 will be appended at the end; leave blank to autopopulate with a timestamp
+
+# dataloader settings
+data_kwargs:
+  model_path: './savedmodels/base_model.h5'
+  tasks: ["site","subsite","laterality","histology","behavior"]
+  exclude_single: False
+  shuffle_case_order: False
+  split_by_tumorid: True
+  reproducible: True
+  random_seed: 42
+
+# general training args
+train_kwargs:
+  batch_per_gpu: 128
+  max_epochs: 100
+  patience: 5
+  mixed_precision: True
+  class_weights: #  './weights/random_weights.pickle' # path, dict, or blank
+
+# case level context model args
+model_kwargs:
+  att_dim_per_head: 50
+  att_heads: 8
+  att_dropout: 0.1
+  forward_mask: True
+
+# abstain args
+abstain_kwargs:
+  abstain_flag: False
+  abs_gain: 5.0
+  acc_gain: 10.0
+  alphas: {'site':0.5,'subsite':0.5,'laterality':0.5,'histology':0.5,'behavior':0.5}
+  max_abs: {'site':0.8,'subsite':0.8,'laterality':0.5,'histology':0.8,'behavior':0.5}
+  min_acc: {'site':0.975,'subsite':0.975,'laterality':0.975,'histology':0.975,'behavior':0.985}
+  alpha_scale: {'site':0.8,'subsite':0.8,'laterality':0.8,'histology':0.8,'behavior':0.8}
+  tune_mode: 'acc'
+  stop_limit: 0.005
+  stop_metric: 'max'
+  ntask_flag: False
+  ntask_tasks: ["site","laterality","histology","behavior"]
+  ntask_alpha: 0.1
+  ntask_alpha_scale: 0.8
+  ntask_max_abs: 0.9
+  ntask_min_acc: 0.975

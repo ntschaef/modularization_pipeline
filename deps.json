@@ -1,0 +1,43 @@
+{
+  "Parser": {
+    "modules":[],
+    "env_vars":["DATA_DB","DATA_SCHEMA"],
+    "mod_args":["db_list","add_fields"],
+    "py_packs":["pandas","sqlite3"]},
+  "Cleaner": {
+    "modules":["Parser"],
+    "env_vars":[],
+    "mod_args":["remove_whitespace","remove_longword","remove_breaktoken","remove_punc","lowercase",
+     "convert_breaktoken","convert_escapecode","convert_general","stem","fix_clocks"],
+    "py_packs":["nltk","re"]}, 
+  "Sanitizer":{
+    "modules":["Parser","Cleaner"],
+    "env_vars":[],
+    "mod_args":["deidentify", "min_doc_length", "remove_dups"],
+    "py_packs":["pandas","sqlite3"]}, 
+  "Filter":{
+    "modules":["Parser","Sanitizer"],
+    "env_vars":[],
+    "mod_args":["tasks", "only_single", "include_only_scores", "window_days", "window_fields", "min_year", "max_year"],
+    "py_packs":[]},
+  "Splitter": {
+    "modules":["Parser", "Sanitizer", "Filter"],
+    "env_vars":[],
+    "mod_args":["split_type", "by_registry", "test_split", "val_split", "sklearn_random_seed"],
+    "py_packs":["sklearn"]}, 
+  "Data_Generator": {
+    "modules":["Parser","Sanitizer","Splitter"],
+    "env_vars":[],
+    "mod_args":["use_security", "use_w2v", "concat_split", "vocab_source", "min_label_count", "w2v_kwargs", "np_seed", "add_tasks", "add_labels"],
+    "py_packs":["gensim", "numpy","pandas"]}, 
+  "Encoder": {
+    "modules":["Parser","Sanitizer","Splitter","Data_Generator"],
+    "env_vars":[], 
+    "mod_args":["metadata_fields","remove_unks","reverse_tokens","sequence_length"],
+    "py_packs":["numpy","pandas"]}, 
+  "Model_Suite": {
+    "modules":[],
+    "env_vars":[], 
+    "mod_args":[],
+    "py_packs":["sklearn"]}
+}

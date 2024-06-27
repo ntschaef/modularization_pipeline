@@ -1,0 +1,832 @@
+Validating kwargs in model_args.yml file
+Loading data and creating DataLoaders
+Training on 363367, validate on 77623
+
+Defining a model
+Creating model trainer
+Training a mthisan model with 1 cuda device
+
+
+epoch: 1
+
+training time 838.62
+Training loss: 0.797045
+        task:      micro        macro
+        site:     0.7554,     0.3251
+     subsite:     0.4314,     0.0745
+  laterality:     0.8177,     0.3662
+   histology:     0.5522,     0.0278
+    behavior:     0.9240,     0.5177
+
+epoch 1 validation
+
+epoch 1 val loss: 0.88466483, best val loss: inf
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8474,     0.4538
+     subsite:     0.5235,     0.1273
+  laterality:     0.8623,     0.4193
+   histology:     0.6388,     0.0572
+    behavior:     0.9504,     0.6357
+
+epoch: 2
+
+training time 832.92
+Training loss: 1.092049
+        task:      micro        macro
+        site:     0.8515,     0.4726
+     subsite:     0.5307,     0.1346
+  laterality:     0.8584,     0.4245
+   histology:     0.6517,     0.0609
+    behavior:     0.9483,     0.6387
+
+epoch 2 validation
+
+epoch 2 val loss: 0.79805666, best val loss: 0.88466483
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8597,     0.5102
+     subsite:     0.5521,     0.1657
+  laterality:     0.8658,     0.4612
+   histology:     0.6712,     0.0942
+    behavior:     0.9553,     0.6418
+
+epoch: 3
+
+training time 829.78
+Training loss: 0.742237
+        task:      micro        macro
+        site:     0.8618,     0.5148
+     subsite:     0.5519,     0.1638
+  laterality:     0.8641,     0.4329
+   histology:     0.6740,     0.0884
+    behavior:     0.9529,     0.6641
+
+epoch 3 validation
+
+epoch 3 val loss: 0.75982612, best val loss: 0.79805666
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8663,     0.5437
+     subsite:     0.5651,     0.1982
+  laterality:     0.8686,     0.4642
+   histology:     0.6883,     0.1306
+    behavior:     0.9582,     0.6821
+
+epoch: 4
+
+training time 830.66
+Training loss: 0.788968
+        task:      micro        macro
+        site:     0.8672,     0.5389
+     subsite:     0.5644,     0.1859
+  laterality:     0.8673,     0.4391
+   histology:     0.6874,     0.1133
+    behavior:     0.9554,     0.6810
+
+epoch 4 validation
+
+epoch 4 val loss: 0.73598957, best val loss: 0.75982612
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8703,     0.5668
+     subsite:     0.5720,     0.2184
+  laterality:     0.8689,     0.4700
+   histology:     0.6997,     0.1631
+    behavior:     0.9591,     0.6875
+
+epoch: 5
+
+training time 829.53
+Training loss: 0.744771
+        task:      micro        macro
+        site:     0.8697,     0.5551
+     subsite:     0.5728,     0.2010
+  laterality:     0.8687,     0.4443
+   histology:     0.6956,     0.1352
+    behavior:     0.9571,     0.7033
+
+epoch 5 validation
+
+epoch 5 val loss: 0.72290587, best val loss: 0.73598957
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8710,     0.5844
+     subsite:     0.5808,     0.2303
+  laterality:     0.8696,     0.4664
+   histology:     0.7033,     0.1775
+    behavior:     0.9596,     0.7036
+
+epoch: 6
+
+training time 830.00
+Training loss: 0.623437
+        task:      micro        macro
+        site:     0.8732,     0.5667
+     subsite:     0.5814,     0.2154
+  laterality:     0.8701,     0.4544
+   histology:     0.7015,     0.1529
+    behavior:     0.9578,     0.7285
+
+epoch 6 validation
+
+epoch 6 val loss: 0.71467000, best val loss: 0.72290587
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8732,     0.5772
+     subsite:     0.5845,     0.2381
+  laterality:     0.8702,     0.4716
+   histology:     0.7091,     0.2012
+    behavior:     0.9608,     0.7192
+
+epoch: 7
+
+training time 828.17
+Training loss: 0.731667
+        task:      micro        macro
+        site:     0.8741,     0.5726
+     subsite:     0.5866,     0.2242
+  laterality:     0.8709,     0.4480
+   histology:     0.7055,     0.1644
+    behavior:     0.9587,     0.7416
+
+epoch 7 validation
+
+epoch 7 val loss: 0.70284998, best val loss: 0.71467000
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8749,     0.5859
+     subsite:     0.5896,     0.2497
+  laterality:     0.8722,     0.4765
+   histology:     0.7123,     0.2097
+    behavior:     0.9621,     0.7526
+
+epoch: 8
+
+training time 828.36
+Training loss: 0.661366
+        task:      micro        macro
+        site:     0.8762,     0.5769
+     subsite:     0.5907,     0.2349
+  laterality:     0.8713,     0.4577
+   histology:     0.7085,     0.1766
+    behavior:     0.9598,     0.7481
+
+epoch 8 validation
+
+epoch 8 val loss: 0.69759279, best val loss: 0.70284998
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8757,     0.5845
+     subsite:     0.5927,     0.2539
+  laterality:     0.8720,     0.4742
+   histology:     0.7129,     0.2161
+    behavior:     0.9633,     0.7723
+
+epoch: 9
+
+training time 830.92
+Training loss: 0.717836
+        task:      micro        macro
+        site:     0.8779,     0.5850
+     subsite:     0.5940,     0.2421
+  laterality:     0.8727,     0.4581
+   histology:     0.7115,     0.1852
+    behavior:     0.9603,     0.7714
+
+epoch 9 validation
+
+epoch 9 val loss: 0.69354093, best val loss: 0.69759279
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8759,     0.5947
+     subsite:     0.5927,     0.2541
+  laterality:     0.8730,     0.4700
+   histology:     0.7136,     0.2272
+    behavior:     0.9622,     0.7576
+
+epoch: 10
+
+training time 828.15
+Training loss: 0.640299
+        task:      micro        macro
+        site:     0.8784,     0.5882
+     subsite:     0.5973,     0.2473
+  laterality:     0.8727,     0.4666
+   histology:     0.7141,     0.1959
+    behavior:     0.9607,     0.7809
+
+epoch 10 validation
+
+epoch 10 val loss: 0.68875188, best val loss: 0.69354093
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8775,     0.5991
+     subsite:     0.5959,     0.2582
+  laterality:     0.8734,     0.4868
+   histology:     0.7171,     0.2259
+    behavior:     0.9624,     0.7870
+
+epoch: 11
+
+training time 829.88
+Training loss: 0.616744
+        task:      micro        macro
+        site:     0.8799,     0.5960
+     subsite:     0.5999,     0.2522
+  laterality:     0.8736,     0.4693
+   histology:     0.7148,     0.2027
+    behavior:     0.9611,     0.7872
+
+epoch 11 validation
+
+epoch 11 val loss: 0.68433130, best val loss: 0.68875188
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8777,     0.6044
+     subsite:     0.5974,     0.2679
+  laterality:     0.8741,     0.4849
+   histology:     0.7184,     0.2412
+    behavior:     0.9625,     0.7865
+
+epoch: 12
+
+training time 829.96
+Training loss: 0.652260
+        task:      micro        macro
+        site:     0.8808,     0.5987
+     subsite:     0.6020,     0.2570
+  laterality:     0.8740,     0.4677
+   histology:     0.7178,     0.2141
+    behavior:     0.9614,     0.7863
+
+epoch 12 validation
+
+epoch 12 val loss: 0.68351835, best val loss: 0.68433130
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8793,     0.6045
+     subsite:     0.5988,     0.2783
+  laterality:     0.8733,     0.4705
+   histology:     0.7196,     0.2508
+    behavior:     0.9605,     0.7554
+
+epoch: 13
+
+training time 829.47
+Training loss: 0.720799
+        task:      micro        macro
+        site:     0.8814,     0.6052
+     subsite:     0.6039,     0.2612
+  laterality:     0.8744,     0.4649
+   histology:     0.7187,     0.2180
+    behavior:     0.9617,     0.7893
+
+epoch 13 validation
+
+epoch 13 val loss: 0.68083310, best val loss: 0.68351835
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8794,     0.6032
+     subsite:     0.5999,     0.2746
+  laterality:     0.8725,     0.4802
+   histology:     0.7198,     0.2584
+    behavior:     0.9621,     0.7792
+
+epoch: 14
+
+training time 832.19
+Training loss: 0.681515
+        task:      micro        macro
+        site:     0.8822,     0.6032
+     subsite:     0.6046,     0.2644
+  laterality:     0.8744,     0.4654
+   histology:     0.7198,     0.2260
+    behavior:     0.9616,     0.7964
+
+epoch 14 validation
+
+epoch 14 val loss: 0.67399806, best val loss: 0.68083310
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8802,     0.6123
+     subsite:     0.6011,     0.2784
+  laterality:     0.8748,     0.4854
+   histology:     0.7221,     0.2583
+    behavior:     0.9633,     0.8030
+
+epoch: 15
+
+training time 832.19
+Training loss: 0.605348
+        task:      micro        macro
+        site:     0.8829,     0.6079
+     subsite:     0.6065,     0.2684
+  laterality:     0.8763,     0.4711
+   histology:     0.7206,     0.2358
+    behavior:     0.9622,     0.8069
+
+epoch 15 validation
+
+epoch 15 val loss: 0.67420387, best val loss: 0.67399806
+patience counter is at 1 of 5
+        task:      micro        macro
+        site:     0.8792,     0.6088
+     subsite:     0.6008,     0.2787
+  laterality:     0.8758,     0.4815
+   histology:     0.7218,     0.2593
+    behavior:     0.9640,     0.7821
+
+epoch: 16
+
+training time 833.68
+Training loss: 0.582785
+        task:      micro        macro
+        site:     0.8832,     0.6115
+     subsite:     0.6084,     0.2739
+  laterality:     0.8753,     0.4691
+   histology:     0.7227,     0.2368
+    behavior:     0.9623,     0.8103
+
+epoch 16 validation
+
+epoch 16 val loss: 0.67182189, best val loss: 0.67399806
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8801,     0.6105
+     subsite:     0.6035,     0.2801
+  laterality:     0.8752,     0.4839
+   histology:     0.7251,     0.2667
+    behavior:     0.9647,     0.8100
+
+epoch: 17
+
+training time 830.79
+Training loss: 0.664061
+        task:      micro        macro
+        site:     0.8837,     0.6132
+     subsite:     0.6096,     0.2780
+  laterality:     0.8756,     0.4713
+   histology:     0.7236,     0.2434
+    behavior:     0.9624,     0.8098
+
+epoch 17 validation
+
+epoch 17 val loss: 0.66802698, best val loss: 0.67182189
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8813,     0.6083
+     subsite:     0.6046,     0.2839
+  laterality:     0.8756,     0.4864
+   histology:     0.7249,     0.2612
+    behavior:     0.9644,     0.7935
+
+epoch: 18
+
+training time 831.82
+Training loss: 0.624505
+        task:      micro        macro
+        site:     0.8850,     0.6184
+     subsite:     0.6116,     0.2858
+  laterality:     0.8760,     0.4702
+   histology:     0.7249,     0.2478
+    behavior:     0.9627,     0.8182
+
+epoch 18 validation
+
+epoch 18 val loss: 0.66708666, best val loss: 0.66802698
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8811,     0.6136
+     subsite:     0.6043,     0.2805
+  laterality:     0.8755,     0.4796
+   histology:     0.7256,     0.2675
+    behavior:     0.9641,     0.8130
+
+epoch: 19
+
+training time 831.28
+Training loss: 0.607716
+        task:      micro        macro
+        site:     0.8851,     0.6208
+     subsite:     0.6120,     0.2830
+  laterality:     0.8760,     0.4762
+   histology:     0.7257,     0.2547
+    behavior:     0.9630,     0.8195
+
+epoch 19 validation
+
+epoch 19 val loss: 0.66751063, best val loss: 0.66708666
+patience counter is at 1 of 5
+        task:      micro        macro
+        site:     0.8807,     0.6152
+     subsite:     0.6055,     0.2898
+  laterality:     0.8746,     0.4829
+   histology:     0.7269,     0.2750
+    behavior:     0.9644,     0.8036
+
+epoch: 20
+
+training time 831.76
+Training loss: 0.642224
+        task:      micro        macro
+        site:     0.8862,     0.6229
+     subsite:     0.6136,     0.2909
+  laterality:     0.8766,     0.4768
+   histology:     0.7267,     0.2591
+    behavior:     0.9630,     0.8113
+
+epoch 20 validation
+
+epoch 20 val loss: 0.66926050, best val loss: 0.66708666
+patience counter is at 2 of 5
+        task:      micro        macro
+        site:     0.8805,     0.6079
+     subsite:     0.6057,     0.2828
+  laterality:     0.8758,     0.4857
+   histology:     0.7251,     0.2740
+    behavior:     0.9639,     0.7907
+
+epoch: 21
+
+training time 829.94
+Training loss: 0.577590
+        task:      micro        macro
+        site:     0.8862,     0.6281
+     subsite:     0.6154,     0.2913
+  laterality:     0.8771,     0.4734
+   histology:     0.7281,     0.2634
+    behavior:     0.9626,     0.8124
+
+epoch 21 validation
+
+epoch 21 val loss: 0.66509598, best val loss: 0.66708666
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8822,     0.6059
+     subsite:     0.6068,     0.2837
+  laterality:     0.8744,     0.4812
+   histology:     0.7257,     0.2737
+    behavior:     0.9645,     0.8022
+
+epoch: 22
+
+training time 831.46
+Training loss: 0.608713
+        task:      micro        macro
+        site:     0.8867,     0.6244
+     subsite:     0.6158,     0.2921
+  laterality:     0.8779,     0.4754
+   histology:     0.7282,     0.2671
+    behavior:     0.9634,     0.8251
+
+epoch 22 validation
+
+epoch 22 val loss: 0.66284448, best val loss: 0.66509598
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8823,     0.6221
+     subsite:     0.6082,     0.2925
+  laterality:     0.8756,     0.4847
+   histology:     0.7281,     0.2744
+    behavior:     0.9646,     0.8173
+
+epoch: 23
+
+training time 831.17
+Training loss: 0.730994
+        task:      micro        macro
+        site:     0.8869,     0.6313
+     subsite:     0.6165,     0.2974
+  laterality:     0.8771,     0.4758
+   histology:     0.7291,     0.2710
+    behavior:     0.9637,     0.8279
+
+epoch 23 validation
+
+epoch 23 val loss: 0.66233271, best val loss: 0.66284448
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8820,     0.6171
+     subsite:     0.6068,     0.2914
+  laterality:     0.8761,     0.4823
+   histology:     0.7267,     0.2716
+    behavior:     0.9643,     0.8079
+
+epoch: 24
+
+training time 832.46
+Training loss: 0.707836
+        task:      micro        macro
+        site:     0.8871,     0.6300
+     subsite:     0.6172,     0.2966
+  laterality:     0.8768,     0.4808
+   histology:     0.7299,     0.2716
+    behavior:     0.9635,     0.8275
+
+epoch 24 validation
+
+epoch 24 val loss: 0.66365302, best val loss: 0.66233271
+patience counter is at 1 of 5
+        task:      micro        macro
+        site:     0.8826,     0.6114
+     subsite:     0.6068,     0.2886
+  laterality:     0.8753,     0.4901
+   histology:     0.7277,     0.2826
+    behavior:     0.9642,     0.7979
+
+epoch: 25
+
+training time 831.48
+Training loss: 0.497206
+        task:      micro        macro
+        site:     0.8881,     0.6329
+     subsite:     0.6187,     0.3049
+  laterality:     0.8776,     0.4828
+   histology:     0.7306,     0.2753
+    behavior:     0.9635,     0.8239
+
+epoch 25 validation
+
+epoch 25 val loss: 0.66036117, best val loss: 0.66233271
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8825,     0.6168
+     subsite:     0.6081,     0.2930
+  laterality:     0.8753,     0.4916
+   histology:     0.7278,     0.2837
+    behavior:     0.9649,     0.8099
+
+epoch: 26
+
+training time 833.13
+Training loss: 0.529377
+        task:      micro        macro
+        site:     0.8880,     0.6367
+     subsite:     0.6190,     0.3087
+  laterality:     0.8777,     0.4768
+   histology:     0.7309,     0.2856
+    behavior:     0.9635,     0.8213
+
+epoch 26 validation
+
+epoch 26 val loss: 0.66206563, best val loss: 0.66036117
+patience counter is at 1 of 5
+        task:      micro        macro
+        site:     0.8823,     0.6171
+     subsite:     0.6081,     0.2947
+  laterality:     0.8748,     0.4946
+   histology:     0.7270,     0.2844
+    behavior:     0.9645,     0.8070
+
+epoch: 27
+
+training time 830.76
+Training loss: 0.457234
+        task:      micro        macro
+        site:     0.8886,     0.6390
+     subsite:     0.6202,     0.3122
+  laterality:     0.8779,     0.4796
+   histology:     0.7307,     0.2787
+    behavior:     0.9639,     0.8315
+
+epoch 27 validation
+
+epoch 27 val loss: 0.65886664, best val loss: 0.66036117
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8830,     0.6237
+     subsite:     0.6102,     0.2964
+  laterality:     0.8763,     0.4876
+   histology:     0.7282,     0.2883
+    behavior:     0.9646,     0.8137
+
+epoch: 28
+
+training time 831.58
+Training loss: 0.702683
+        task:      micro        macro
+        site:     0.8892,     0.6379
+     subsite:     0.6209,     0.3157
+  laterality:     0.8786,     0.4821
+   histology:     0.7319,     0.2909
+    behavior:     0.9637,     0.8268
+
+epoch 28 validation
+
+epoch 28 val loss: 0.66016340, best val loss: 0.65886664
+patience counter is at 1 of 5
+        task:      micro        macro
+        site:     0.8836,     0.6170
+     subsite:     0.6095,     0.2985
+  laterality:     0.8748,     0.4837
+   histology:     0.7273,     0.2908
+    behavior:     0.9640,     0.8106
+
+epoch: 29
+
+training time 829.31
+Training loss: 0.749487
+        task:      micro        macro
+        site:     0.8896,     0.6364
+     subsite:     0.6212,     0.3139
+  laterality:     0.8782,     0.4828
+   histology:     0.7328,     0.2989
+    behavior:     0.9642,     0.8301
+
+epoch 29 validation
+
+epoch 29 val loss: 0.65961778, best val loss: 0.65886664
+patience counter is at 2 of 5
+        task:      micro        macro
+        site:     0.8836,     0.6184
+     subsite:     0.6086,     0.3000
+  laterality:     0.8758,     0.4898
+   histology:     0.7263,     0.2826
+    behavior:     0.9656,     0.8096
+
+epoch: 30
+
+training time 833.72
+Training loss: 0.766032
+        task:      micro        macro
+        site:     0.8892,     0.6435
+     subsite:     0.6222,     0.3182
+  laterality:     0.8780,     0.4829
+   histology:     0.7335,     0.2967
+    behavior:     0.9642,     0.8292
+
+epoch 30 validation
+
+epoch 30 val loss: 0.65805477, best val loss: 0.65886664
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8829,     0.6218
+     subsite:     0.6093,     0.3041
+  laterality:     0.8760,     0.4862
+   histology:     0.7280,     0.2921
+    behavior:     0.9643,     0.8148
+
+epoch: 31
+
+training time 830.07
+Training loss: 0.519403
+        task:      micro        macro
+        site:     0.8899,     0.6454
+     subsite:     0.6232,     0.3202
+  laterality:     0.8788,     0.4800
+   histology:     0.7340,     0.2994
+    behavior:     0.9642,     0.8314
+
+epoch 31 validation
+
+epoch 31 val loss: 0.65979749, best val loss: 0.65805477
+patience counter is at 1 of 5
+        task:      micro        macro
+        site:     0.8830,     0.6230
+     subsite:     0.6094,     0.3016
+  laterality:     0.8754,     0.4835
+   histology:     0.7281,     0.2969
+    behavior:     0.9649,     0.8161
+
+epoch: 32
+
+training time 834.35
+Training loss: 0.472916
+        task:      micro        macro
+        site:     0.8901,     0.6465
+     subsite:     0.6236,     0.3220
+  laterality:     0.8787,     0.4852
+   histology:     0.7342,     0.3003
+    behavior:     0.9645,     0.8320
+
+epoch 32 validation
+
+epoch 32 val loss: 0.65532249, best val loss: 0.65805477
+patience counter is at 0 of 5
+        task:      micro        macro
+        site:     0.8823,     0.6193
+     subsite:     0.6108,     0.2984
+  laterality:     0.8767,     0.4943
+   histology:     0.7288,     0.2977
+    behavior:     0.9651,     0.8140
+
+epoch: 33
+
+training time 834.51
+Training loss: 0.599135
+        task:      micro        macro
+        site:     0.8905,     0.6500
+     subsite:     0.6245,     0.3299
+  laterality:     0.8784,     0.4822
+   histology:     0.7339,     0.3037
+    behavior:     0.9640,     0.8320
+
+epoch 33 validation
+
+epoch 33 val loss: 0.66040933, best val loss: 0.65532249
+patience counter is at 1 of 5
+        task:      micro        macro
+        site:     0.8817,     0.6229
+     subsite:     0.6082,     0.2986
+  laterality:     0.8747,     0.4821
+   histology:     0.7274,     0.3004
+    behavior:     0.9646,     0.8025
+
+epoch: 34
+
+training time 831.92
+Training loss: 0.638493
+        task:      micro        macro
+        site:     0.8906,     0.6503
+     subsite:     0.6237,     0.3302
+  laterality:     0.8793,     0.4838
+   histology:     0.7354,     0.3069
+    behavior:     0.9647,     0.8350
+
+epoch 34 validation
+
+epoch 34 val loss: 0.65831089, best val loss: 0.65532249
+patience counter is at 2 of 5
+        task:      micro        macro
+        site:     0.8840,     0.6230
+     subsite:     0.6093,     0.2980
+  laterality:     0.8757,     0.4924
+   histology:     0.7275,     0.3027
+    behavior:     0.9645,     0.8150
+
+epoch: 35
+
+training time 833.36
+Training loss: 0.693397
+        task:      micro        macro
+        site:     0.8909,     0.6507
+     subsite:     0.6254,     0.3312
+  laterality:     0.8786,     0.4837
+   histology:     0.7359,     0.3091
+    behavior:     0.9641,     0.8343
+
+epoch 35 validation
+
+epoch 35 val loss: 0.65765649, best val loss: 0.65532249
+patience counter is at 3 of 5
+        task:      micro        macro
+        site:     0.8832,     0.6200
+     subsite:     0.6095,     0.3013
+  laterality:     0.8748,     0.4857
+   histology:     0.7271,     0.2976
+    behavior:     0.9650,     0.8144
+
+epoch: 36
+
+training time 833.88
+Training loss: 0.628528
+        task:      micro        macro
+        site:     0.8916,     0.6571
+     subsite:     0.6256,     0.3343
+  laterality:     0.8794,     0.4848
+   histology:     0.7365,     0.3111
+    behavior:     0.9644,     0.8333
+
+epoch 36 validation
+
+epoch 36 val loss: 0.65673673, best val loss: 0.65532249
+patience counter is at 4 of 5
+        task:      micro        macro
+        site:     0.8834,     0.6246
+     subsite:     0.6102,     0.3038
+  laterality:     0.8739,     0.4886
+   histology:     0.7290,     0.3016
+    behavior:     0.9648,     0.8164
+
+epoch: 37
+
+training time 831.99
+Training loss: 0.720449
+        task:      micro        macro
+        site:     0.8916,     0.6527
+     subsite:     0.6261,     0.3419
+  laterality:     0.8795,     0.4896
+   histology:     0.7370,     0.3093
+    behavior:     0.9645,     0.8350
+
+epoch 37 validation
+
+epoch 37 val loss: 0.65821433, best val loss: 0.65532249
+patience counter is at 5 of 5
+        task:      micro        macro
+        site:     0.8832,     0.6264
+     subsite:     0.6107,     0.3021
+  laterality:     0.8765,     0.4880
+   histology:     0.7279,     0.3025
+    behavior:     0.9650,     0.8096
+
+Evaluating train set
+
+Evaluating val set
+
+Evaluating test set
+
+Saving predictions to csv
+
+model file has been saved at savedmodels/model_fold0.h5
